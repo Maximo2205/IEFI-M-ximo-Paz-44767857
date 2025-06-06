@@ -1,0 +1,121 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.OleDb;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace IEFI_Máximo_Paz_44767857
+{
+    public class ConexionBD
+    {
+        public DataSet DS { get; set; }
+
+        public OleDbDataAdapter DAA { get; set; }
+        public OleDbDataAdapter DAU { get; set; }
+
+        public string Error = "";
+
+        public DateTime horaInicioSesion;
+        public string usuarioActual;
+
+        public ConexionBD()
+        {
+            try
+            {
+                DS = new DataSet();
+
+                OleDbConnection cnn = new OleDbConnection();
+                cnn.ConnectionString = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source=Acceso.mdb";
+                cnn.Open();
+
+                OleDbCommand cmp = new OleDbCommand();
+                cmp.CommandType = CommandType.TableDirect;
+                cmp.CommandText = "Usuarios";
+                cmp.Connection = cnn;
+                DAU = new OleDbDataAdapter();
+                DAU.SelectCommand = cmp;
+                DAU.Fill(DS, "Usuarios");
+
+                OleDbCommand cma = new OleDbCommand();
+                cma.CommandType = CommandType.TableDirect;
+                cma.CommandText = "Auditoria";
+                cma.Connection = cnn;
+                DAA = new OleDbDataAdapter();
+                DAA.SelectCommand = cma;
+                DAA.Fill(DS, "Auditoria");
+
+                DataColumn[] clavePrimaria = new DataColumn[1];
+                clavePrimaria[0] = DS.Tables["Usuarios"].Columns["ID"];
+                DS.Tables["Usuarios"].PrimaryKey = clavePrimaria;
+
+                OleDbCommandBuilder cb = new OleDbCommandBuilder(DAU);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la tabla: " + ex.Message);
+            }
+
+        }
+
+        public bool ValidarUsuario(string nombreUsuario, string contraseña)
+        {
+            try
+            {
+                foreach (DataRow fila in DS.Tables["Usuarios"].Rows)
+                {
+                    if (fila["NombreUsuario"].ToString() == nombreUsuario && fila["Contraseña"].ToString() == contraseña)
+                    {
+                        return true; // Usuario válido
+                    }
+                }
+                return false; // No se encontró coincidencia
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al validar usuario: " + ex.Message);
+                return false;
+            }
+        }
+
+        public void RegistrarAuditoria(string usuario, DateTime fecha, int tiempoUso)
+        {
+            try
+            {
+                DataRow dr = DS.Tables["Auditoria"].NewRow();
+                dr["Usuario"] = usuario;
+                dr["Fecha"] = fecha;
+                dr["TiempoUso"] = tiempoUso;
+                DS.Tables["Auditoria"].Rows.Add(dr);
+
+                OleDbCommandBuilder cb = new OleDbCommandBuilder(DAA);
+                DAA.Update(DS, "Auditoria");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar auditoría: " + ex.Message);
+            }
+        }
+
+        public DataTable ObtenerAuditorias()
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM Auditoria", DAA.SelectCommand.Connection);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener auditorías: " + ex.Message);
+                return null;
+            }
+        }
+
+
+    }
+}
