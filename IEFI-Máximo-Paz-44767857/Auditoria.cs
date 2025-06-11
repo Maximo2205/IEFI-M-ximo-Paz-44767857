@@ -34,5 +34,17 @@ namespace IEFI_Máximo_Paz_44767857
             conexion.RegistrarAuditoria(conexion.usuarioActual, horaFin, tiempoUsoEnMinutos);
             Application.Exit();
         }
+
+        private void btnAuditoria_Click(object sender, EventArgs e)
+        {
+            Audi frm = new Audi();
+            frm.ShowDialog();
+        }
+
+        private void btnRegistar_Click(object sender, EventArgs e)
+        {
+            Registrar registrar = new Registrar();
+            registrar.ShowDialog();
+        }
     }
 }

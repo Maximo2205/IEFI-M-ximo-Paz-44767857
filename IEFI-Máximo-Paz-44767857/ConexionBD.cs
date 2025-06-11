@@ -99,6 +99,34 @@ namespace IEFI_Máximo_Paz_44767857
             }
         }
 
+        public void Agregar(string nombre1, string contraseña1, string tarea, string categoria)
+        {
+            try
+            {
+                if (DS == null || DS.Tables["Usuarios"] == null)
+                {
+                    MessageBox.Show("La tabla 'Usuarios' no está cargada.");
+                    return;
+                }
+
+                DataRow dr = DS.Tables["Usuarios"].NewRow();
+                dr["NombreUsuario"] = nombre1;
+                dr["Contraseña"] = contraseña1;
+                dr["Tarea"] = tarea;
+                dr["Categoria"] = categoria;
+                DS.Tables["Contactos"].Rows.Add(dr);
+
+                OleDbCommandBuilder cb = new OleDbCommandBuilder(DAA);
+                DAA.Update(DS, "Usuarios");
+
+                MessageBox.Show("Usuario agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar: " + ex.Message);
+            }
+        }
+
         public DataTable ObtenerAuditorias()
         {
             try

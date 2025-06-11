@@ -36,6 +36,7 @@
             this.btnAuditoria = new System.Windows.Forms.Button();
             this.btnRegistar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.strConnectionStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // 
             this.strConnectionStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tstrConnectioStatus});
-            this.strConnectionStatus.Location = new System.Drawing.Point(0, 428);
+            this.strConnectionStatus.Location = new System.Drawing.Point(0, 477);
             this.strConnectionStatus.Name = "strConnectionStatus";
             this.strConnectionStatus.Size = new System.Drawing.Size(506, 22);
             this.strConnectionStatus.TabIndex = 7;
@@ -59,7 +60,7 @@
             // 
             // btnOperador
             // 
-            this.btnOperador.Location = new System.Drawing.Point(61, 59);
+            this.btnOperador.Location = new System.Drawing.Point(61, 120);
             this.btnOperador.Name = "btnOperador";
             this.btnOperador.Size = new System.Drawing.Size(134, 23);
             this.btnOperador.TabIndex = 8;
@@ -68,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(316, 59);
+            this.button1.Location = new System.Drawing.Point(316, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 23);
             this.button1.TabIndex = 9;
@@ -78,32 +79,34 @@
             // dgvMostrar
             // 
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrar.Location = new System.Drawing.Point(12, 113);
+            this.dgvMostrar.Location = new System.Drawing.Point(12, 174);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.Size = new System.Drawing.Size(240, 292);
             this.dgvMostrar.TabIndex = 10;
             // 
             // btnAuditoria
             // 
-            this.btnAuditoria.Location = new System.Drawing.Point(316, 113);
+            this.btnAuditoria.Location = new System.Drawing.Point(316, 174);
             this.btnAuditoria.Name = "btnAuditoria";
             this.btnAuditoria.Size = new System.Drawing.Size(134, 59);
             this.btnAuditoria.TabIndex = 11;
             this.btnAuditoria.Text = "Auditoria";
             this.btnAuditoria.UseVisualStyleBackColor = true;
+            this.btnAuditoria.Click += new System.EventHandler(this.btnAuditoria_Click);
             // 
             // btnRegistar
             // 
-            this.btnRegistar.Location = new System.Drawing.Point(316, 187);
+            this.btnRegistar.Location = new System.Drawing.Point(316, 248);
             this.btnRegistar.Name = "btnRegistar";
             this.btnRegistar.Size = new System.Drawing.Size(134, 59);
             this.btnRegistar.TabIndex = 12;
             this.btnRegistar.Text = "Registrar";
             this.btnRegistar.UseVisualStyleBackColor = true;
+            this.btnRegistar.Click += new System.EventHandler(this.btnRegistar_Click);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(419, 382);
+            this.btnCerrar.Location = new System.Drawing.Point(419, 443);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 13;
@@ -111,12 +114,23 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(78, 33);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(354, 42);
+            this.lblTitulo.TabIndex = 14;
+            this.lblTitulo.Text = "PAGINA PRINCIPAL";
+            // 
             // Auditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(506, 450);
+            this.ClientSize = new System.Drawing.Size(506, 499);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnRegistar);
             this.Controls.Add(this.btnAuditoria);
@@ -145,5 +159,6 @@
         private System.Windows.Forms.Button btnAuditoria;
         private System.Windows.Forms.Button btnRegistar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

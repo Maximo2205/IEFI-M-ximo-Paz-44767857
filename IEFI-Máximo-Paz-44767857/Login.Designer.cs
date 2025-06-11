@@ -33,25 +33,26 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(137, 113);
+            this.txtUsuario.Location = new System.Drawing.Point(131, 132);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(195, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(137, 177);
+            this.txtContraseña.Location = new System.Drawing.Point(131, 196);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(195, 20);
             this.txtContraseña.TabIndex = 1;
             // 
             // btnInicio
             // 
-            this.btnInicio.Location = new System.Drawing.Point(176, 242);
+            this.btnInicio.Location = new System.Drawing.Point(170, 261);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(117, 23);
             this.btnInicio.TabIndex = 2;
@@ -63,7 +64,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(134, 85);
+            this.lblUsuario.Location = new System.Drawing.Point(128, 104);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 3;
@@ -73,11 +74,22 @@
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.ForeColor = System.Drawing.Color.White;
-            this.lblContraseña.Location = new System.Drawing.Point(134, 150);
+            this.lblContraseña.Location = new System.Drawing.Point(128, 169);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
             this.lblContraseña.TabIndex = 4;
             this.lblContraseña.Text = "Contraseña";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(54, 28);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(354, 42);
+            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.Text = "INICIO DE SESION";
             // 
             // Login
             // 
@@ -85,6 +97,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(458, 339);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnInicio);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
