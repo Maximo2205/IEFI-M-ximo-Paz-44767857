@@ -22,5 +22,29 @@ namespace IEFI_Máximo_Paz_44767857
             ConexionBD conexion = new ConexionBD();
             dgvMostrar1.DataSource = conexion.ObtenerAuditorias();
         }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string textoBusqueda = txtBuscar.Text.Trim();
+
+                if (string.IsNullOrEmpty(textoBusqueda))
+                {
+                    MessageBox.Show("Ingrese el nombre del Usuario que desea filtrar");
+                    return;
+                }
+
+                DataTable resultados = new ConexionBD().Buscar(textoBusqueda);
+                dgvMostrar1.DataSource = resultados;
+
+                if (resultados.Rows.Count == 0)
+                    MessageBox.Show("No se encontraron coincidencias");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
 }

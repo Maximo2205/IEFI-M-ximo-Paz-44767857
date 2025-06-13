@@ -38,21 +38,21 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(131, 132);
+            this.txtUsuario.Location = new System.Drawing.Point(132, 145);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(195, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(131, 196);
+            this.txtContraseña.Location = new System.Drawing.Point(132, 209);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(195, 20);
             this.txtContraseña.TabIndex = 1;
             // 
             // btnInicio
             // 
-            this.btnInicio.Location = new System.Drawing.Point(170, 261);
+            this.btnInicio.Location = new System.Drawing.Point(171, 274);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(117, 23);
             this.btnInicio.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(128, 104);
+            this.lblUsuario.Location = new System.Drawing.Point(129, 117);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.ForeColor = System.Drawing.Color.White;
-            this.lblContraseña.Location = new System.Drawing.Point(128, 169);
+            this.lblContraseña.Location = new System.Drawing.Point(129, 182);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
             this.lblContraseña.TabIndex = 4;
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(458, 339);
+            this.ClientSize = new System.Drawing.Size(458, 350);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);

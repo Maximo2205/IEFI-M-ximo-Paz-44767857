@@ -32,15 +32,13 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dgvMostrarUsuarios = new System.Windows.Forms.DataGridView();
             this.txtTarea = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.txtContraseña1 = new System.Windows.Forms.TextBox();
-            this.btnMostrar = new System.Windows.Forms.Button();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarUsuarios)).BeginInit();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -80,14 +78,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // dgvMostrarUsuarios
-            // 
-            this.dgvMostrarUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarUsuarios.Location = new System.Drawing.Point(60, 383);
-            this.dgvMostrarUsuarios.Name = "dgvMostrarUsuarios";
-            this.dgvMostrarUsuarios.Size = new System.Drawing.Size(515, 194);
-            this.dgvMostrarUsuarios.TabIndex = 8;
             // 
             // txtTarea
             // 
@@ -133,15 +123,6 @@
             this.txtContraseña1.Size = new System.Drawing.Size(215, 20);
             this.txtContraseña1.TabIndex = 5;
             // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Location = new System.Drawing.Point(463, 332);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(111, 23);
-            this.btnMostrar.TabIndex = 13;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
@@ -153,18 +134,27 @@
             this.cmbCategoria.Size = new System.Drawing.Size(216, 21);
             this.cmbCategoria.TabIndex = 14;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(463, 332);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(111, 23);
+            this.btnModificar.TabIndex = 15;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(656, 637);
+            this.ClientSize = new System.Drawing.Size(643, 399);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.cmbCategoria);
-            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTarea);
-            this.Controls.Add(this.dgvMostrarUsuarios);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtContraseña1);
             this.Controls.Add(this.lblContraseña);
@@ -174,7 +164,6 @@
             this.Name = "Registrar";
             this.Text = "Registrar";
             this.Load += new System.EventHandler(this.Registrar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,13 +175,12 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dgvMostrarUsuarios;
         private System.Windows.Forms.TextBox txtTarea;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.TextBox txtContraseña1;
-        private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

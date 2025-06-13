@@ -36,5 +36,11 @@ namespace IEFI_Máximo_Paz_44767857
 
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Modificar frmM = new Modificar(conexion);
+            frmM.ShowDialog();
+        }
     }
 }
