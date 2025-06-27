@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Auditoria));
             this.btnOperador = new System.Windows.Forms.Button();
             this.btnAdministrador = new System.Windows.Forms.Button();
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
@@ -184,6 +185,7 @@
             this.Controls.Add(this.btnRegistar);
             this.Controls.Add(this.btnAuditoria);
             this.Controls.Add(this.dgvMostrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Auditoria";
             this.Text = "Auditoria";
             this.Load += new System.EventHandler(this.Auditoria_Load);

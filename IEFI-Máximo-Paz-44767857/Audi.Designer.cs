@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audi));
             this.dgvMostrar1 = new System.Windows.Forms.DataGridView();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,14 +79,6 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BackColor = System.Drawing.Color.PeachPuff;
-            this.txtBuscar.Location = new System.Drawing.Point(30, 121);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(171, 20);
-            this.txtBuscar.TabIndex = 4;
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
@@ -97,6 +90,15 @@
             this.lblNombre.Size = new System.Drawing.Size(116, 15);
             this.lblNombre.TabIndex = 5;
             this.lblNombre.Text = "Introduzca Nombre";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Location = new System.Drawing.Point(30, 121);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(171, 13);
+            this.txtBuscar.TabIndex = 4;
             // 
             // Audi
             // 
@@ -111,6 +113,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.dgvMostrar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Audi";
             this.Text = "Audi";
             this.Load += new System.EventHandler(this.Audi_Load);
@@ -126,7 +129,7 @@
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

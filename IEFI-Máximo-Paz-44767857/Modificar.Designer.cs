@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modificar));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreModificar = new System.Windows.Forms.TextBox();
@@ -70,9 +71,10 @@
             // txtNombreModificar
             // 
             this.txtNombreModificar.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtNombreModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreModificar.Location = new System.Drawing.Point(18, 55);
             this.txtNombreModificar.Name = "txtNombreModificar";
-            this.txtNombreModificar.Size = new System.Drawing.Size(205, 20);
+            this.txtNombreModificar.Size = new System.Drawing.Size(205, 13);
             this.txtNombreModificar.TabIndex = 2;
             // 
             // btnModificar
@@ -124,17 +126,19 @@
             // txtNombre2
             // 
             this.txtNombre2.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtNombre2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre2.Location = new System.Drawing.Point(17, 210);
             this.txtNombre2.Name = "txtNombre2";
-            this.txtNombre2.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre2.Size = new System.Drawing.Size(156, 13);
             this.txtNombre2.TabIndex = 8;
             // 
             // txtContraseña2
             // 
             this.txtContraseña2.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtContraseña2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña2.Location = new System.Drawing.Point(206, 210);
             this.txtContraseña2.Name = "txtContraseña2";
-            this.txtContraseña2.Size = new System.Drawing.Size(156, 20);
+            this.txtContraseña2.Size = new System.Drawing.Size(156, 13);
             this.txtContraseña2.TabIndex = 10;
             // 
             // cmbCategoria1
@@ -186,6 +190,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Modificar";
             this.Text = "Modificar";
             this.Load += new System.EventHandler(this.Modificar_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registrar));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -71,9 +72,10 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Location = new System.Drawing.Point(29, 293);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(215, 20);
+            this.txtNombre.Size = new System.Drawing.Size(215, 13);
             this.txtNombre.TabIndex = 3;
             // 
             // btnAgregar
@@ -113,9 +115,10 @@
             // txtContraseña1
             // 
             this.txtContraseña1.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtContraseña1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña1.Location = new System.Drawing.Point(29, 148);
             this.txtContraseña1.Name = "txtContraseña1";
-            this.txtContraseña1.Size = new System.Drawing.Size(215, 20);
+            this.txtContraseña1.Size = new System.Drawing.Size(215, 13);
             this.txtContraseña1.TabIndex = 5;
             // 
             // cmbCategoria
@@ -186,6 +189,7 @@
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.dgvMostrar);
             this.Controls.Add(this.pnlRegistrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registrar";
             this.Text = "Registrar";
             this.Load += new System.EventHandler(this.Registrar_Load);

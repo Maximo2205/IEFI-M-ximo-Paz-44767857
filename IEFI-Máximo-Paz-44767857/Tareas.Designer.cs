@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tareas));
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cmbTarea = new System.Windows.Forms.ComboBox();
@@ -85,7 +86,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(525, 147);
+            this.btnAgregar.Location = new System.Drawing.Point(525, 144);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             this.lblLugar.AutoSize = true;
             this.lblLugar.ForeColor = System.Drawing.Color.PeachPuff;
-            this.lblLugar.Location = new System.Drawing.Point(343, 152);
+            this.lblLugar.Location = new System.Drawing.Point(343, 149);
             this.lblLugar.Name = "lblLugar";
             this.lblLugar.Size = new System.Drawing.Size(44, 13);
             this.lblLugar.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             this.cmbLugar.BackColor = System.Drawing.Color.PeachPuff;
             this.cmbLugar.FormattingEnabled = true;
-            this.cmbLugar.Location = new System.Drawing.Point(400, 149);
+            this.cmbLugar.Location = new System.Drawing.Point(400, 146);
             this.cmbLugar.Name = "cmbLugar";
             this.cmbLugar.Size = new System.Drawing.Size(113, 21);
             this.cmbLugar.TabIndex = 6;
@@ -135,9 +136,10 @@
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Location = new System.Drawing.Point(113, 108);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(200, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(200, 13);
             this.txtUsuario.TabIndex = 9;
             // 
             // btnMostrar
@@ -189,6 +191,7 @@
             this.Controls.Add(this.pnlTareas);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.dgvMostrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tareas";
             this.Text = "Tareas";
             this.Load += new System.EventHandler(this.Tareas_Load);
