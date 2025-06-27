@@ -39,15 +39,16 @@
             // 
             // dgvMostrar1
             // 
+            this.dgvMostrar1.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgvMostrar1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrar1.Location = new System.Drawing.Point(30, 192);
+            this.dgvMostrar1.Location = new System.Drawing.Point(294, 33);
             this.dgvMostrar1.Name = "dgvMostrar1";
             this.dgvMostrar1.Size = new System.Drawing.Size(356, 208);
             this.dgvMostrar1.TabIndex = 0;
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(30, 154);
+            this.btnMostrar.Location = new System.Drawing.Point(30, 173);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(139, 23);
             this.btnMostrar.TabIndex = 1;
@@ -58,8 +59,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(101, 30);
+            this.lblTitulo.ForeColor = System.Drawing.Color.PeachPuff;
+            this.lblTitulo.Location = new System.Drawing.Point(23, 33);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(207, 42);
             this.lblTitulo.TabIndex = 2;
@@ -67,7 +70,7 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(247, 154);
+            this.btnFiltrar.Location = new System.Drawing.Point(30, 218);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(139, 23);
             this.btnFiltrar.TabIndex = 3;
@@ -77,7 +80,8 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(215, 124);
+            this.txtBuscar.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtBuscar.Location = new System.Drawing.Point(30, 121);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(171, 20);
             this.txtBuscar.TabIndex = 4;
@@ -85,10 +89,12 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(212, 106);
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.PeachPuff;
+            this.lblNombre.Location = new System.Drawing.Point(27, 103);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(129, 15);
+            this.lblNombre.Size = new System.Drawing.Size(116, 15);
             this.lblNombre.TabIndex = 5;
             this.lblNombre.Text = "Introduzca Nombre";
             // 
@@ -97,7 +103,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(425, 428);
+            this.BackgroundImage = global::IEFI_Máximo_Paz_44767857.Properties.Resources.Lugar_de_trabajo;
+            this.ClientSize = new System.Drawing.Size(678, 266);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnFiltrar);
@@ -106,6 +113,7 @@
             this.Controls.Add(this.dgvMostrar1);
             this.Name = "Audi";
             this.Text = "Audi";
+            this.Load += new System.EventHandler(this.Audi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

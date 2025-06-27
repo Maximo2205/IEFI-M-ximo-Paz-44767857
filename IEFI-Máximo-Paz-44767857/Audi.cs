@@ -15,6 +15,18 @@ namespace IEFI_Máximo_Paz_44767857
         public Audi()
         {
             InitializeComponent();
+
+            btnMostrar.BackColor = Color.Tan;
+            btnMostrar.ForeColor = Color.Black;
+            btnMostrar.FlatStyle = FlatStyle.Flat;
+            btnMostrar.FlatAppearance.BorderSize = 0;
+            btnMostrar.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnFiltrar.BackColor = Color.Tan;
+            btnFiltrar.ForeColor = Color.Black;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.FlatAppearance.BorderSize = 0;
+            btnFiltrar.Font = new Font("Segoe UI", 9, FontStyle.Bold);
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
@@ -45,6 +57,11 @@ namespace IEFI_Máximo_Paz_44767857
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void Audi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

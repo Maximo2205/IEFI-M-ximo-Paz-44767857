@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IEFI_Máximo_Paz_44767857
 {
@@ -15,6 +16,13 @@ namespace IEFI_Máximo_Paz_44767857
         public Login()
         {
             InitializeComponent();
+            
+            btnInicio.BackColor = Color.Tan;
+            btnInicio.ForeColor = Color.Black;
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.FlatAppearance.BorderSize = 0;
+            btnInicio.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -39,5 +47,11 @@ namespace IEFI_Máximo_Paz_44767857
                 MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

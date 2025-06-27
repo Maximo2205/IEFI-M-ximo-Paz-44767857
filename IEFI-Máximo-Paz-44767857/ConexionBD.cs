@@ -16,10 +16,13 @@ namespace IEFI_Máximo_Paz_44767857
         public OleDbDataAdapter DAA { get; set; }
         public OleDbDataAdapter DAU { get; set; }
 
+        public OleDbDataAdapter DAT { get; set; }
+
         public string Error = "";
 
         public DateTime horaInicioSesion;
         public string usuarioActual;
+        public string EstadoConexion;
 
         public ConexionBD()
         {
@@ -30,6 +33,8 @@ namespace IEFI_Máximo_Paz_44767857
                 OleDbConnection cnn = new OleDbConnection();
                 cnn.ConnectionString = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source=Acceso.mdb";
                 cnn.Open();
+
+                EstadoConexion = $"Conectado - Bienvenido";
 
                 OleDbCommand cmp = new OleDbCommand();
                 cmp.CommandType = CommandType.TableDirect;
@@ -47,11 +52,20 @@ namespace IEFI_Máximo_Paz_44767857
                 DAA.SelectCommand = cma;
                 DAA.Fill(DS, "Auditoria");
 
+                OleDbCommand cmt = new OleDbCommand();
+                cmt.CommandType = CommandType.TableDirect;
+                cmt.CommandText = "Tareas";
+                cmt.Connection = cnn;
+                DAT = new OleDbDataAdapter();
+                DAT.SelectCommand = cmt;
+                DAT.Fill(DS, "Tareas");
+
                 DataColumn[] clavePrimaria = new DataColumn[1];
                 clavePrimaria[0] = DS.Tables["Usuarios"].Columns["NombreUsuario"];
                 DS.Tables["Usuarios"].PrimaryKey = clavePrimaria;
 
                 OleDbCommandBuilder cb = new OleDbCommandBuilder(DAU);
+
             }
             catch (Exception ex)
             {
@@ -99,7 +113,7 @@ namespace IEFI_Máximo_Paz_44767857
             }
         }
 
-        public void Agregar(string nombre1, string contraseña1, string tarea, string categoria)
+        public void Agregar(string nombre1, string contraseña1, string categoria)
         {
             try
             {
@@ -112,7 +126,6 @@ namespace IEFI_Máximo_Paz_44767857
                 DataRow dr = DS.Tables["Usuarios"].NewRow();
                 dr["NombreUsuario"] = nombre1;
                 dr["Contraseña"] = contraseña1;
-                dr["Tarea"] = tarea;
                 dr["Categoria"] = categoria;
                 DS.Tables["Usuarios"].Rows.Add(dr);
 
@@ -127,7 +140,7 @@ namespace IEFI_Máximo_Paz_44767857
             }
         }
 
-        public void Modificar(string NomModificar, string nombre2, string contraseña2, string tarea1, string categoria1)
+        public void Modificar(string NomModificar, string nombre2, string contraseña2, string categoria1)
         {
             try
             {
@@ -137,7 +150,6 @@ namespace IEFI_Máximo_Paz_44767857
                     fila.BeginEdit();
                     fila["NombreUsuario"] = nombre2;
                     fila["Contraseña"] = contraseña2;
-                    fila["Tarea"] = tarea1;
                     fila["Categoria"] = categoria1;
                     fila.EndEdit();
 
@@ -202,25 +214,6 @@ namespace IEFI_Máximo_Paz_44767857
             }
         }
 
-        public DataTable ObtenerTarea()
-        {
-            DataTable Tareas = new DataTable();
-            Tareas.Columns.Add("Tarea");
-
-            foreach (DataRow fila in DS.Tables["Usuarios"].Rows)
-            {
-                if (fila["NombreUsuario"].ToString() == usuarioActual)
-                {
-                    DataRow nuevaFila = Tareas.NewRow();
-                    nuevaFila["Tarea"] = fila["Tarea"].ToString();
-                    Tareas.Rows.Add(nuevaFila);
-                    break;
-                }
-            }
-
-            return Tareas;
-        }
-
         public string ObtenerCategoriaUsuarioActual()
         {
             foreach (DataRow fila in DS.Tables["Usuarios"].Rows)
@@ -234,6 +227,80 @@ namespace IEFI_Máximo_Paz_44767857
             return "";
         }
 
+        public void AgregarTarea(string usuario, string tarea, string lugar, DateTime fecha)
+        {
+            try
+            {
+                if (DS == null || DS.Tables["Tareas"] == null)
+                {
+                    MessageBox.Show("La tabla 'Tareas' no está cargada.");
+                    return;
+                }
 
+                DataRow dr = DS.Tables["Tareas"].NewRow();
+                dr["Usuario"] = usuario;
+                dr["Tarea"] = tarea;
+                dr["Lugar"] = lugar;
+                dr["Fecha"] = fecha;
+                DS.Tables["Tareas"].Rows.Add(dr);
+
+                OleDbCommandBuilder cb = new OleDbCommandBuilder(DAT);
+                DAT.Update(DS, "Tareas");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar: " + ex.Message);
+            }
+        }
+
+        public DataTable ObtenerTareasDelUsuario()
+        {
+            DataTable tareasUsuario = DS.Tables["Tareas"].Clone();
+
+            foreach (DataRow fila in DS.Tables["Tareas"].Rows)
+            {
+                if (fila["Usuario"].ToString() == usuarioActual)
+                {
+                    tareasUsuario.ImportRow(fila);
+                }
+            }
+
+            return tareasUsuario;
+        }
+
+        public DataTable ObtenerTodasLasTareas()
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM Tareas", DAT.SelectCommand.Connection);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener las tareas: " + ex.Message);
+                return null;
+            }
+        }
+
+        public DataTable ObtenerTodosLosUsuarios()
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM Usuarios", DAU.SelectCommand.Connection);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los usuarios: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

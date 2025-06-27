@@ -17,6 +17,20 @@ namespace IEFI_Máximo_Paz_44767857
         {
             InitializeComponent();
             this.conexion = conexion;
+
+            pnlModificar.BackColor = Color.FromArgb(74, 54, 41);
+
+            btnModificar.BackColor = Color.Tan;
+            btnModificar.ForeColor = Color.Black;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnEliminar.BackColor = Color.Tan;
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.Font = new Font("Segoe UI", 9, FontStyle.Bold);
         }
 
         private void Modificar_Load(object sender, EventArgs e)
@@ -29,10 +43,9 @@ namespace IEFI_Máximo_Paz_44767857
             string NomModificar = txtNombreModificar.Text;
             string nombre2 = txtNombre2.Text;
             string contraseña2 = txtContraseña2.Text;
-            string tarea1 = txtTarea1.Text;
             string categoria1 = cmbCategoria1.Text;
 
-            conexion.Modificar(NomModificar,nombre2, contraseña2, tarea1, categoria1);
+            conexion.Modificar(NomModificar,nombre2, contraseña2, categoria1);
 
             txtNombreModificar.Text = "";
             txtNombre2.Text = "";

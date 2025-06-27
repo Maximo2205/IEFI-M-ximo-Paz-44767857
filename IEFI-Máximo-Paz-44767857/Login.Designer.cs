@@ -48,17 +48,19 @@
             // 
             this.txtContraseña.Location = new System.Drawing.Point(132, 209);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(195, 20);
             this.txtContraseña.TabIndex = 1;
             // 
             // btnInicio
             // 
+            this.btnInicio.BackColor = System.Drawing.Color.White;
             this.btnInicio.Location = new System.Drawing.Point(171, 274);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(117, 23);
             this.btnInicio.TabIndex = 2;
             this.btnInicio.Text = "Iniciar Sesion";
-            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.UseVisualStyleBackColor = false;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // lblUsuario
@@ -88,8 +90,8 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(54, 28);
+            this.lblTitulo.ForeColor = System.Drawing.Color.GhostWhite;
+            this.lblTitulo.Location = new System.Drawing.Point(51, 39);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(354, 42);
             this.lblTitulo.TabIndex = 5;
@@ -100,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.BackgroundImage = global::IEFI_Máximo_Paz_44767857.Properties.Resources.fondo_negro_cuadricula_digital_abstracta_53876_97647;
+            this.BackgroundImage = global::IEFI_Máximo_Paz_44767857.Properties.Resources.fondo_3;
             this.ClientSize = new System.Drawing.Size(455, 350);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblContraseña);
@@ -111,6 +113,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

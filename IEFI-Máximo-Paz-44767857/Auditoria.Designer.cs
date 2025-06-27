@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.strConnectionStatus = new System.Windows.Forms.StatusStrip();
-            this.tstrConnectioStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnOperador = new System.Windows.Forms.Button();
             this.btnAdministrador = new System.Windows.Forms.Button();
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
@@ -38,32 +36,20 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMostrarTareas = new System.Windows.Forms.Button();
-            this.strConnectionStatus.SuspendLayout();
+            this.btnRegistrarTarea = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tslConexion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pnlPaginaPrincipal = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            this.pnlPaginaPrincipal.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // strConnectionStatus
-            // 
-            this.strConnectionStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstrConnectioStatus});
-            this.strConnectionStatus.Location = new System.Drawing.Point(0, 532);
-            this.strConnectionStatus.Name = "strConnectionStatus";
-            this.strConnectionStatus.Size = new System.Drawing.Size(510, 22);
-            this.strConnectionStatus.TabIndex = 7;
-            this.strConnectionStatus.Text = "statusStrip1";
-            // 
-            // tstrConnectioStatus
-            // 
-            this.tstrConnectioStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tstrConnectioStatus.Name = "tstrConnectioStatus";
-            this.tstrConnectioStatus.Size = new System.Drawing.Size(118, 17);
-            this.tstrConnectioStatus.Text = "toolStripStatusLabel1";
             // 
             // btnOperador
             // 
-            this.btnOperador.Location = new System.Drawing.Point(37, 120);
+            this.btnOperador.Location = new System.Drawing.Point(423, 34);
             this.btnOperador.Name = "btnOperador";
-            this.btnOperador.Size = new System.Drawing.Size(183, 23);
+            this.btnOperador.Size = new System.Drawing.Size(135, 32);
             this.btnOperador.TabIndex = 8;
             this.btnOperador.Text = "Operador";
             this.btnOperador.UseVisualStyleBackColor = true;
@@ -71,9 +57,9 @@
             // 
             // btnAdministrador
             // 
-            this.btnAdministrador.Location = new System.Drawing.Point(288, 120);
+            this.btnAdministrador.Location = new System.Drawing.Point(585, 34);
             this.btnAdministrador.Name = "btnAdministrador";
-            this.btnAdministrador.Size = new System.Drawing.Size(183, 23);
+            this.btnAdministrador.Size = new System.Drawing.Size(135, 32);
             this.btnAdministrador.TabIndex = 9;
             this.btnAdministrador.Text = "Administrador";
             this.btnAdministrador.UseVisualStyleBackColor = true;
@@ -81,17 +67,18 @@
             // 
             // dgvMostrar
             // 
+            this.dgvMostrar.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrar.Enabled = false;
-            this.dgvMostrar.Location = new System.Drawing.Point(12, 226);
+            this.dgvMostrar.Location = new System.Drawing.Point(205, 156);
             this.dgvMostrar.Name = "dgvMostrar";
-            this.dgvMostrar.Size = new System.Drawing.Size(240, 292);
+            this.dgvMostrar.Size = new System.Drawing.Size(515, 292);
             this.dgvMostrar.TabIndex = 10;
             // 
             // btnAuditoria
             // 
             this.btnAuditoria.Enabled = false;
-            this.btnAuditoria.Location = new System.Drawing.Point(316, 226);
+            this.btnAuditoria.Location = new System.Drawing.Point(26, 185);
             this.btnAuditoria.Name = "btnAuditoria";
             this.btnAuditoria.Size = new System.Drawing.Size(134, 59);
             this.btnAuditoria.TabIndex = 11;
@@ -102,17 +89,17 @@
             // btnRegistar
             // 
             this.btnRegistar.Enabled = false;
-            this.btnRegistar.Location = new System.Drawing.Point(316, 300);
+            this.btnRegistar.Location = new System.Drawing.Point(27, 270);
             this.btnRegistar.Name = "btnRegistar";
             this.btnRegistar.Size = new System.Drawing.Size(134, 59);
             this.btnRegistar.TabIndex = 12;
-            this.btnRegistar.Text = "Registrar";
+            this.btnRegistar.Text = "Registrar Usuario";
             this.btnRegistar.UseVisualStyleBackColor = true;
             this.btnRegistar.Click += new System.EventHandler(this.btnRegistar_Click);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(423, 495);
+            this.btnCerrar.Location = new System.Drawing.Point(645, 464);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 13;
@@ -123,8 +110,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(78, 33);
+            this.lblTitulo.ForeColor = System.Drawing.Color.Tan;
+            this.lblTitulo.Location = new System.Drawing.Point(20, 34);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(354, 42);
             this.lblTitulo.TabIndex = 14;
@@ -133,7 +122,7 @@
             // btnMostrarTareas
             // 
             this.btnMostrarTareas.Enabled = false;
-            this.btnMostrarTareas.Location = new System.Drawing.Point(13, 194);
+            this.btnMostrarTareas.Location = new System.Drawing.Point(205, 127);
             this.btnMostrarTareas.Name = "btnMostrarTareas";
             this.btnMostrarTareas.Size = new System.Drawing.Size(121, 23);
             this.btnMostrarTareas.TabIndex = 15;
@@ -141,36 +130,74 @@
             this.btnMostrarTareas.UseVisualStyleBackColor = true;
             this.btnMostrarTareas.Click += new System.EventHandler(this.btnMostrarTareas_Click);
             // 
+            // btnRegistrarTarea
+            // 
+            this.btnRegistrarTarea.Enabled = false;
+            this.btnRegistrarTarea.Location = new System.Drawing.Point(27, 357);
+            this.btnRegistrarTarea.Name = "btnRegistrarTarea";
+            this.btnRegistrarTarea.Size = new System.Drawing.Size(134, 59);
+            this.btnRegistrarTarea.TabIndex = 16;
+            this.btnRegistrarTarea.Text = "Registrar Tarea";
+            this.btnRegistrarTarea.UseVisualStyleBackColor = true;
+            this.btnRegistrarTarea.Click += new System.EventHandler(this.btnRegistrarTarea_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Tan;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslConexion});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 508);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(756, 22);
+            this.statusStrip1.TabIndex = 17;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tslConexion
+            // 
+            this.tslConexion.BackColor = System.Drawing.Color.Transparent;
+            this.tslConexion.Name = "tslConexion";
+            this.tslConexion.Size = new System.Drawing.Size(0, 17);
+            // 
+            // pnlPaginaPrincipal
+            // 
+            this.pnlPaginaPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pnlPaginaPrincipal.Controls.Add(this.lblTitulo);
+            this.pnlPaginaPrincipal.Controls.Add(this.btnOperador);
+            this.pnlPaginaPrincipal.Controls.Add(this.btnAdministrador);
+            this.pnlPaginaPrincipal.Location = new System.Drawing.Point(0, 1);
+            this.pnlPaginaPrincipal.Name = "pnlPaginaPrincipal";
+            this.pnlPaginaPrincipal.Size = new System.Drawing.Size(756, 100);
+            this.pnlPaginaPrincipal.TabIndex = 18;
+            // 
             // Auditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(510, 554);
+            this.BackgroundImage = global::IEFI_Máximo_Paz_44767857.Properties.Resources.Lugar_de_trabajo;
+            this.ClientSize = new System.Drawing.Size(756, 530);
+            this.Controls.Add(this.pnlPaginaPrincipal);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.btnRegistrarTarea);
             this.Controls.Add(this.btnMostrarTareas);
-            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnRegistar);
             this.Controls.Add(this.btnAuditoria);
             this.Controls.Add(this.dgvMostrar);
-            this.Controls.Add(this.btnAdministrador);
-            this.Controls.Add(this.btnOperador);
-            this.Controls.Add(this.strConnectionStatus);
             this.Name = "Auditoria";
             this.Text = "Auditoria";
             this.Load += new System.EventHandler(this.Auditoria_Load);
-            this.strConnectionStatus.ResumeLayout(false);
-            this.strConnectionStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.pnlPaginaPrincipal.ResumeLayout(false);
+            this.pnlPaginaPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.StatusStrip strConnectionStatus;
-        private System.Windows.Forms.ToolStripStatusLabel tstrConnectioStatus;
         private System.Windows.Forms.Button btnOperador;
         private System.Windows.Forms.Button btnAdministrador;
         private System.Windows.Forms.DataGridView dgvMostrar;
@@ -179,5 +206,9 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnMostrarTareas;
+        private System.Windows.Forms.Button btnRegistrarTarea;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tslConexion;
+        private System.Windows.Forms.Panel pnlPaginaPrincipal;
     }
 }

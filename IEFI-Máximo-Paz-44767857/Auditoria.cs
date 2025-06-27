@@ -18,6 +18,52 @@ namespace IEFI_Máximo_Paz_44767857
             InitializeComponent();
             this.conexion = conexion;
             this.FormClosing += Auditoria_FormClosing;
+
+            pnlPaginaPrincipal.BackColor = Color.FromArgb(74, 54, 41);
+
+            btnOperador.BackColor = Color.Tan;
+            btnOperador.ForeColor = Color.Black;
+            btnOperador.FlatStyle = FlatStyle.Flat;
+            btnOperador.FlatAppearance.BorderSize = 0;
+            btnOperador.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnMostrarTareas.BackColor = Color.Tan;
+            btnMostrarTareas.ForeColor = Color.Black;
+            btnMostrarTareas.FlatStyle = FlatStyle.Flat;
+            btnMostrarTareas.FlatAppearance.BorderSize = 0;
+            btnMostrarTareas.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnAdministrador.BackColor = Color.Tan;
+            btnAdministrador.ForeColor = Color.Black;
+            btnAdministrador.FlatStyle = FlatStyle.Flat;
+            btnAdministrador.FlatAppearance.BorderSize = 0;
+            btnAdministrador.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnAuditoria.BackColor = Color.Tan;
+            btnAuditoria.ForeColor = Color.Black;
+            btnAuditoria.FlatStyle = FlatStyle.Flat;
+            btnAuditoria.FlatAppearance.BorderSize = 0;
+            btnAuditoria.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnRegistar.BackColor = Color.Tan;
+            btnRegistar.ForeColor = Color.Black;
+            btnRegistar.FlatStyle = FlatStyle.Flat;
+            btnRegistar.FlatAppearance.BorderSize = 0;
+            btnRegistar.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnRegistrarTarea.BackColor = Color.Tan;
+            btnRegistrarTarea.ForeColor = Color.Black;
+            btnRegistrarTarea.FlatStyle = FlatStyle.Flat;
+            btnRegistrarTarea.FlatAppearance.BorderSize = 0;
+            btnRegistrarTarea.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            btnCerrar.BackColor = Color.Tan;
+            btnCerrar.ForeColor = Color.Black;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.FlatAppearance.BorderSize = 0;
+            btnCerrar.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+
         }
 
         private void Auditoria_Load(object sender, EventArgs e)
@@ -26,6 +72,8 @@ namespace IEFI_Máximo_Paz_44767857
             btnMostrarTareas.Enabled = false;
             btnAuditoria.Enabled = false;
             btnRegistar.Enabled = false;
+
+            tslConexion.Text = conexion.EstadoConexion;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -85,7 +133,7 @@ namespace IEFI_Máximo_Paz_44767857
 
         private void btnMostrarTareas_Click(object sender, EventArgs e)
         {
-            dgvMostrar.DataSource = conexion.ObtenerTarea();
+            dgvMostrar.DataSource = conexion.ObtenerTareasDelUsuario();
         }
 
         private void btnAdministrador_Click(object sender, EventArgs e)
@@ -98,6 +146,7 @@ namespace IEFI_Máximo_Paz_44767857
                 btnMostrarTareas.Enabled = true;
                 btnAuditoria.Enabled = true;
                 btnRegistar.Enabled = true;
+                btnRegistrarTarea.Enabled = true;
 
                 MessageBox.Show("Funciones de administrador habilitadas.");
             }
@@ -105,6 +154,12 @@ namespace IEFI_Máximo_Paz_44767857
             {
                 MessageBox.Show("No tiene permisos para acceder a funciones de administrador.");
             }
+        }
+
+        private void btnRegistrarTarea_Click(object sender, EventArgs e)
+        {
+           Tareas tarea = new Tareas(conexion);
+           tarea.ShowDialog();
         }
     }
 }
